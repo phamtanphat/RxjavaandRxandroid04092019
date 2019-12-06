@@ -10,6 +10,7 @@ import io.reactivex.Observer;
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
         Observable<String> stringObservable = Observable.just("Teo","Ti","Tun");
         stringObservable
                 .subscribeOn(Schedulers.newThread())
+                .map(new Function<String, String>() {
+                    // alt + insert : dung chức năng
+                    @Override
+                    public String apply(String s) throws Exception {
+                        return s + " xin chao";
+                    }
+                })
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<String>() {
                     @Override
