@@ -1,7 +1,9 @@
 package com.example.rxjavaandrxandroid;
 
-public class MylifeActivity  {
+import androidx.lifecycle.ViewModel;
 
+public class MylifeActivity extends ViewModel{
 
+    String phone = "";
 
 }
