@@ -50,7 +50,27 @@ public class MainActivity extends AppCompatActivity {
                 txtPhone.setText(phone);
             }
         });
-
-
     }
+    // Rxjava ,rxandroid :
+//        + Observable :
+//        - Cục data tạo dữ liệu just , defer ..
+//        - Cục data bắn thông tin ra subscribe
+//        - Cục data muốn tạo được trên luồng khác subscribeOn :
+//              Schedulers.newThread()(Luồng phụ)
+//              AndroidSchedulers.mainThread(Luồng chính)
+//         -Cục data có quyền quyết định dữ liệu bắn trên luồng nào theo observeOn
+//        +Observer : onNext , onError , onComplete
+
+    // LifeCycle Aware Component
+    // Quản lý vòng đời các class có LifeCycleOwner
+    // Annotation là các event hoặc state trong việc nhận biết vòng đời của Activity
+    // Class sử dụng thì phải kế thừa LifeCycleObserve
+    // Thằng nào muốn truyền lifecycle : getLife.addObserve(mylifeActivity)
+
+    // Tính bất biến dữ liệu : mutableLifeData
+    // setvalue thay đổi dữ liệu và nó sẽ tự chạy method onChange trong đối tượng
+    // postValue dùng luồng phụ không được để trong luồng chính
+
+    // ViewModel : giữ lại giá trị cho activity nếu activity bị reset
+
 }
