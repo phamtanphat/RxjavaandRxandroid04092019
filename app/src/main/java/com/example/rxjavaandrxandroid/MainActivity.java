@@ -25,13 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mylifeActivity = new MylifeActivity();
-        mylifeActivity.getName().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
 
-            }
-        });
 
     }
 }
