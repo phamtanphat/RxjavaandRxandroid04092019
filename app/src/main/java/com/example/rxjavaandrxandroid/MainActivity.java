@@ -26,21 +26,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mylifeActivity = new MylifeActivity();
-        mylifeActivity.name.observe(this, new Observer<String>() {
+        mylifeActivity.getName().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                if (s != null){
-                    Log.d("BBB",s);
-                }
+
             }
         });
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mylifeActivity.setName("hello");
-            }
-        },2000);
 
     }
 }
